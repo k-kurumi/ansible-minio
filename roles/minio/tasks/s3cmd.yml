@@ -1,0 +1,12 @@
+---
+- name: install s3cmd
+  apt:
+    name: s3cmd
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+
+- name: create .s3cfg
+  template:
+    src: ./templates/s3cfg.j2
+    dest: "/home/{{ ansible_user }}/.s3cfg"

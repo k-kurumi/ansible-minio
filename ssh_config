@@ -1,0 +1,12 @@
+Host *
+  ServerAliveInterval 15
+  ServerAliveCountMax 5
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+
+Host vagrant
+  HostName 192.168.33.10
+  User vagrant
+  Port 22
+  IdentityFile ~/.ssh/id_rsa
+  ForwardAgent yes

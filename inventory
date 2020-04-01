@@ -1,0 +1,2 @@
+[testvm]
+vagrant ansible_user=vagrant
