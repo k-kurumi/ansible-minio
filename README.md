@@ -13,40 +13,40 @@ minioのplaybook
 
 1. VM作成など
 
-VM起動
-```
-make up
-```
+    VM起動
+    ```
+    make up
+    ```
 
-ansibleインストール
-```
-make init
-```
+    ansibleインストール
+    ```
+    make init
+    ```
 
-接続確認(失敗時は2回実行する(VM作成後初回に失敗することがある))
-```
-make ping
-```
+    接続確認(失敗時は2回実行する(VM作成後初回に失敗することがある))
+    ```
+    make ping
+    ```
 
 2. プレイブック適用
 
-```
-make apply
-```
+    ```
+    make apply
+    ```
 
 3. 動作確認
 
-VMにログイン
-```
-make ssh
-```
+    VMにログイン
+    ```
+    make ssh
+    ```
 
-バケットが作成できることの確認
-```
-s3cmd mb s3://test1
-```
+    バケットが作成できることの確認
+    ```
+    s3cmd mb s3://test1
+    ```
 
-supervisorの確認
-```
-sudo supervisorctl status
-```
+    supervisorの確認
+    ```
+    sudo supervisorctl status
+    ```
