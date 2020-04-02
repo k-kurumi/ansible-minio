@@ -1,7 +1,4 @@
 ---
-- debug:
-    msg: aaaa
-
 - include: minio.yml
   tags: minio
 
