@@ -1,0 +1,23 @@
+[program:minio]
+directory   = /home/{{ ansible_user }}/minio
+command     = /usr/local/bin/minio server /home/{{ ansible_user }}/minio/data
+user        = {{ ansible_user }}
+environment = MINIO_ACCESS_KEY="{{ minio_access_key }}",MINIO_SECRET_KEY="{{ minio_secret_key }}"
+
+stdout_logfile = /var/log/supervisor/minio.stdout
+stdout_logfile_maxbytes = 1MB
+stdout_logfile_backups = 5
+stdout_capture_maxbytes = 1MB
+
+stderr_logfile = /var/log/supervisor/minio.stderr
+stderr_logfile_maxbytes = 1MB
+stderr_logfile_backups = 5
+stderr_capture_maxbytes = 1MB
+redirect_stderr = false
+
+autostart = true
+autorestart = true
+
+stopsignal = INT
+stopwaitsecs = 30
+stopasgroup = true

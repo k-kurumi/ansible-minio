@@ -1,0 +1,6 @@
+---
+- include: minio.yml
+  tags: minio
+
+- include: s3cmd.yml
+  tags: s3cmd
