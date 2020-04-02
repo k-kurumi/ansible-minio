@@ -6,7 +6,7 @@
 
 ## Usage
 
-extravars は {}ansible_connection: local` のため上書きする<br>
+extravars は `ansible_connection: local` のため上書きする<br>
 https://github.com/ansible/ansible-runner/blob/1.4.4/demo/env/extravars
 ```
 docker run -it --rm \
