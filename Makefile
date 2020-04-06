@@ -1,23 +1,19 @@
-.PHONY: init
-init:
-	pipenv sync
-
-.PHONY: up
-up:
+.PHONY: vm_up
+vm_up:
 	vagrant up
 
-.PHONY: destroy
-destroy:
+.PHONY: vm_destroy
+vm_destroy:
 	vagrant destroy --force
 
-.PHONY: ping
-ping:
-	pipenv run ansible all -m ping
+.PHONY: ansible_ping
+ansible_ping:
+	ansible all -m ping
 
-.PHONY: apply
-apply:
-	pipenv run ansible-playbook site.yml
+.PHONY: ansible_apply
+ansible_apply:
+	ansible-playbook site.yml
 
-.PHONY: ssh
-ssh:
+.PHONY: ssh_vagrant
+ssh_vagrant:
 	ssh -F ssh_config vagrant

@@ -4,8 +4,7 @@ minioのplaybook
 
 ## 事前にインストールしておくもの
 
-- python 3.8 (pyenvなどでインストール)
-- pipenv (pip install pipenvなどでインストール)
+- python 3系 (python 3.8.2で確認済み)
 - vagrant
 - virtualbox
 
@@ -13,40 +12,46 @@ minioのplaybook
 
 1. VM作成など
 
-    VM起動
+    VMの起動
     ```
-    make up
+    $ make vm_up
     ```
 
-    ansibleインストール
+    ansibleのインストール
     ```
-    make init
+    $ pip install -r requirements.txt
     ```
 
     接続確認(失敗時は2回実行する(VM作成後初回に失敗することがある))
     ```
-    make ping
+    $ make ansible_ping
     ```
 
 2. プレイブック適用
 
     ```
-    make apply
+    $ make ansible_apply
     ```
 
 3. 動作確認
 
     VMにログイン
     ```
-    make ssh
+    $ make ssh_vagrant
     ```
 
     バケットが作成できることの確認
     ```
-    s3cmd mb s3://test1
+    $ s3cmd mb s3://test1
     ```
 
     supervisorの確認
     ```
-    sudo supervisorctl status
+    $ sudo supervisorctl status
+    ```
+
+4. VMの削除
+
+    ```
+    $ make vm_destroy
     ```
